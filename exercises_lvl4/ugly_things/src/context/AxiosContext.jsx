@@ -15,14 +15,13 @@ function AxiosContextProvider(props) {
         .catch(err => console.log(err))
     }
 
-    function handleSubmit(event) {
-        event.preventDefault();   
-   
-        axios.post (`${baseUrl}`, {
-            title: props.title,
-            description: props.description,
-            imgUrl: props.imgUrl
-        })
+    function handleSubmit(newThing) {
+       
+        axios.post (`${baseUrl}`, newThing)
+            // title: props.title,
+            // description: props.description,
+            // imgUrl: props.imgUrl
+        
         .then(res => setUgliesList(prevUgliesList =>{
             return [...prevUgliesList,
                 res.data

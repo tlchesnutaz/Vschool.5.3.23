@@ -30,6 +30,7 @@ export default function Form() {
 
     // map over array of saved uglies and display
     let mappedUglies = ugliesList.map((data, index) => {
+        
         return (
             <ul>
                 <Card {...data}
@@ -49,6 +50,11 @@ export default function Form() {
             ...prevUglyForm,
             [name]:value
         }))
+    }
+
+    function submit(e) {
+        e.preventDefault()
+        handleSubmit(uglyForm) 
     }
 
     return(
@@ -84,7 +90,7 @@ export default function Form() {
                 />
                 <br />
 
-                <button onClick={handleSubmit} className="submit">Submit Ugly Thing</button>       
+                <button onClick={submit} className="submit">Submit Ugly Thing</button>       
                 
             </form>
             
