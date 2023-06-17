@@ -1,12 +1,12 @@
-import React, {useState, useContext} from "react";
-import { AxiosContext } from "../context/AxiosContext";
+import React, { useState, useContext } from "react"
+import { AxiosContext } from "../context/AxiosContext"
+import HeartButton from "./HeartButton"
 
 export default function Search() {
 
+    const {recAreasList, handleClick, gSearchLink, savedFaves, removeFave} = useContext(AxiosContext)
     const [selectState, setSelectState] = useState("")
-
-    const {handleClick} = useContext(AxiosContext)
-
+ 
     const states = [
         { label: "Alabama",	value: "AL" },
         { label: "Alaska", value: "AK" },
@@ -72,15 +72,13 @@ export default function Search() {
     function submit(e) {
         e.preventDefault()
         handleClick(selectState)
-
-        console.log("State submitted")
-        console.log(selectState)
-    }
+        //console.log("State submitted")
+        //console.log(selectState)
+    } 
 
     return(
-        <div>
+        <div className="search" >
             <form className="form">
-
                 <label>
                     Select your state: 
                     <select
@@ -95,14 +93,29 @@ export default function Search() {
                     ))}                    
                     </select> 
                 </label> 
-                <br />
-
-                <button onClick={submit}> Submit </button>
-                
+                <button onClick={submit}> Submit </button>     
             </form>
 
+            <div className="rec-list">
+                {recAreasList?.map(area => 
+                    <div className="key" key={area.RecAreaID}>
+                        <h3>
+                        <a className="g-link"
+                            href={gSearchLink(area.RecAreaName)} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                        {area.RecAreaName}
+                        </a>
+                        <HeartButton area={area} savedFaves={savedFaves} removeFave={removeFave} />
+                        </h3>
+                    
+                    {area.ACTIVITY?.map((activity, index) => (
+                        <p className="activities" key={index}>{activity.ActivityName}</p>
+                    ))}
+                    </div> 
+                )}    
+            </div>
         </div>
     )
 }
-
-/*<label for="submit"> Submit selected state: </label>*/

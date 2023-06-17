@@ -22,8 +22,10 @@ export default function Meme() {
   React.useEffect(() => {
       fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
-        .then(data => console.log(data))
-        .then(data => setAllMemes(data.data.memes)) //need to get nested memes arr
+        .then(data => {
+          console.log(data);
+          setAllMemes(data.data.memes);
+        }) 
   }, [])  //empty array - no dependencies bc don't need to rerun api call, just cycle through it randomly
 
  /**useEffect takes a function as its parameter. If that function returns something, 
@@ -41,7 +43,7 @@ export default function Meme() {
   //     getMemes()
       //     return () => {
       //           
-      //     }  this return is where the clenup function would go, but we don't need one for this project
+      //     }  this return is where the cleanup function would go, but we don't need one for this project
   // }, [])
 
   function getMemeImg(event) {
@@ -93,6 +95,7 @@ export default function Meme() {
     </div>
     
     );
+
   // OMG I GOT IT WORKING!!!!
   // lol, now I just need to format/style it...
 

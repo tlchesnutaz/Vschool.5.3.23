@@ -3,7 +3,7 @@ import { AxiosContext } from "../context/AxiosContext"
 
 export default function Card (props) {
 
-    const{handleDelete, updateUgly} = useContext(AxiosContext) 
+    const {handleDelete, updateUgly} = useContext(AxiosContext) 
 
     const [uglyCard, setUglyCard] = React.useState({
         title: props.title,

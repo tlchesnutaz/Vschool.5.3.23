@@ -7,7 +7,7 @@ function AxiosContextProvider(props) {
 
     const baseUrl = "https://api.vschool.io/tracychesnut/thing"
 
-    const [ugliesList, setUgliesList] = React.useState([])
+    const [ugliesList, setUgliesList] = useState([])
 
     function getAll(){
         axios.get(`${baseUrl}`)
