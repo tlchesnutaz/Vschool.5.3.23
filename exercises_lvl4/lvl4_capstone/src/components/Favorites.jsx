@@ -1,8 +1,11 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { AxiosContext } from "../context/AxiosContext"
 import HeartButton from "./HeartButton"
 
+
 export default function Favorites() {
+
+    const [testFill, setTestFill] = useState(true)
 
     const {favePlaces, gSearchLink, savedFaves, removeFave} = useContext(AxiosContext) 
         
@@ -16,7 +19,7 @@ export default function Favorites() {
                 >
                 {`${area.RecAreaName} (${area.RECAREAADDRESS.map(code => code.AddressStateCode)})`}
                 </a>
-                <HeartButton area={area} savedFaves={savedFaves} removeFave={removeFave} />
+                <HeartButton testFill={testFill} area={area} savedFaves={savedFaves} removeFave={removeFave} />
             </h3>
         </div>
         

@@ -6,12 +6,11 @@ import Favorites from "./components/Favorites"
 import { FaGithub, FaFacebookF, FaInstagram, FaTwitter, FaRegCopyright } from "react-icons/fa"
 
 
-
-
 export default function App() {
   return(
 
     <Router>
+
       <header>
         <Link className="site-logo" to="/" style={{padding: 10 }}>recREVELRY</Link>
         <nav style={{ margin: 10 }}>
@@ -26,19 +25,13 @@ export default function App() {
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
 
-      <footer>
-        <nav>
-
+      <footer className="footer">
+        
           <span className="copy"> Copyright 2023 < FaRegCopyright /> <Link className="foot-logo" to="/" > recREVELRY </Link> </span>
           <span className="social">< FaFacebookF className="f"/>< FaGithub className="git"/>< FaInstagram className="insta" />< FaTwitter className="twit"/></span>
           <p className="disclaimer"> Disclaimer: the data that is used in this app is imcomplete and inconsistent. Want to help fix it? Volunteer HERE!</p>
-          
-
-        </nav>
-        
+      
       </footer>
-
-  
 
     </Router>
   )

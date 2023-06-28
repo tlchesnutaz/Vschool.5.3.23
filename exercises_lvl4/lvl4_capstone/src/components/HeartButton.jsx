@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md"
 
+
 export default function HeartButton(props) {
 
-    const {area, savedFaves, removeFave} = props
+    const {area, savedFaves, removeFave, testFill} = props
     const [saved, setSaved] = useState(false)
 
     function save(e) {
@@ -17,11 +18,12 @@ export default function HeartButton(props) {
         setSaved(prevSaved => !prevSaved)
         removeFave(area.RecAreaID)
     }
+    console.log(testFill)
 
     return(
         <div className="heart">
-            {!saved && <><MdFavoriteBorder className="fav" onClick={save}/></>}
-            {saved && <><MdFavorite className="fav" onClick={unsave}/></>}
+            {/* {!saved && <></>} {saved && <></>} */}
+            {testFill || saved ? <MdFavorite className="fav" onClick={unsave}/> : <MdFavoriteBorder className="fav" onClick={save}/>}
         </div>
     )
 }

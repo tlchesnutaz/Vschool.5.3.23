@@ -18,10 +18,6 @@ function AxiosContextProvider(props) {
     function handleSubmit(newThing) {
        
         axios.post (`${baseUrl}`, newThing)
-            // title: props.title,
-            // description: props.description,
-            // imgUrl: props.imgUrl
-        
         .then(res => setUgliesList(prevUgliesList =>{
             return [...prevUgliesList,
                 res.data
