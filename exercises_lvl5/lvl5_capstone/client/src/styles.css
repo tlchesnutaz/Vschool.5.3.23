@@ -1,0 +1,52 @@
+/* font-family: 'Tajawal', sans-serif; */
+
+* {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.25;
+
+  color: hsla(0, 0%, 100%, 0.85);
+  background-color: hsl(0, 0%, 60%);
+}
+
+body {
+  display: flex;
+ 
+  
+}
+
+a {
+  text-decoration: inherit;
+}
+a:hover {
+  color: hsl(60, 75%, 75%);
+}
+
+
+
+
+
+button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: hsl(0, 0%, 10%);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: hsl(220, 30%, 25%);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.key {
+  border: 1px solid hsla(0, 0%, 100%, 0.85);
+}

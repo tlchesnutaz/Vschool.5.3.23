@@ -14,7 +14,7 @@ export default function App() {
     axios.get("/api/bounties")
     //.then(res => console.log(res))
     .then(res => setBounties(res.data))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err.response.data.errMsg))
   }
 
   function addBounty(newBounty){
@@ -61,7 +61,7 @@ export default function App() {
         {bounties.map(bounty => 
           <Bounty 
             {...bounty} 
-            key={bounty.lastName}
+            key={bounty._id}
             edit={editBounty}
             deleteBounty={deleteBounty}
           />

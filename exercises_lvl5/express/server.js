@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://tlchesnutaz:oUTPCEesYYWCEpK8@cluster0.2tdcwit.mo
         console.log("Connected to the DB")}
     )
 
-// Routes //
+// Routes
 // userRouter.get("/users", (req, res) => {res.send(users)}) 
 // move this to router file, remove the 'users' to avoid redundancy
 app.use("/api/users", require("./routes/userRouter.js"))
@@ -32,7 +32,6 @@ app.use("/api/users", require("./routes/userRouter.js"))
 app.use((err, req, res, next) => {
     console.log(err)
     return res.send({errMsg: err.message})
-
 })
 
 // Server Listen - requires two arguments:

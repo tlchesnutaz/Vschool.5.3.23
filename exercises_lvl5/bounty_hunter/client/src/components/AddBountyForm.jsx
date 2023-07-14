@@ -3,8 +3,6 @@ import React, { useState } from 'react'
 
 export default function AddBountyForm(props){
 
-
-
     const initInputs = { 
         firstName: props.firstName || '', 
         lastName: props.lastName || '', 

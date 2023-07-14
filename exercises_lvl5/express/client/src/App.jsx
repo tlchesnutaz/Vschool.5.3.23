@@ -40,7 +40,7 @@ export default function App(){
       .catch(err => console.log(err))
   }
 
-  function handleFilter(e){  // this doesn't work, to be used as in example with movies to filter by genre
+  function handleFilter(e){ 
     //console.log(e.target.value)
     if(e.target.value === "reset"){
       getUsers()

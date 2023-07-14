@@ -14,7 +14,7 @@
     # initialize a new node project by typing
         * npm init -y 
             this creates a package.json file that acts as a ‘manifest’- will do this for every node project you start
-            will probably want ot go in and change the name of "main": "index.js" to whatever you want the project to be called - just make sure it's the same as what you actually name the main js file
+            will probably want to go in and change the name of "main": "index.js" to whatever you want the project to be called - just make sure it's the same as what you actually name the main js file
         
         * npm install express (and any other dependencies)
 
@@ -239,8 +239,8 @@ _____________________________________________________________________
             _id: random
             user: object id = user id
         }
-# Mongoose
-    # npm install mongoose (install on 'back-end' per project (not global))
+# Mongoose (for now install mongoose@6.10.3 or 6.11.2)
+    # npm i mongoose (install on 'back-end' per project (not global)) 
     # used with Mongo because it enforces rigidity (bc empty cells = BAD data)
     # purpose is to create models and query data
 
